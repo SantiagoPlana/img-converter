@@ -18,7 +18,7 @@ if upload:
     download_img = to_bytes(gray_img)
     st.image(gray_img)
     st.download_button('Descargar imagen convertida', key='descargar_1',
-                       data=download_img, file_name='grayscale.jpeg')
+                       data=download_img, file_name='nueva_imagen.jpeg')
 
 
 with st.expander('Iniciar cámara'):
@@ -36,4 +36,4 @@ if imagen:
     download_img = to_bytes(gray_img)
 
     st.download_button('Descargar imagen', key='descargar',
-                       data=download_img, file_name='grayscale.jpeg')
+                       data=download_img, file_name='nueva_imagen.jpeg')
