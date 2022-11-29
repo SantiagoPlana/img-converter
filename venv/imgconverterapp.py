@@ -11,11 +11,9 @@ def to_bytes(image):
 
 st.subheader('Conversor de imagen a escala de grises')
 upload = st.file_uploader('Subir imagen')
-radio = st.radio('Tipo de conversión',
-                     options=['L', '1', 'RGB', 'CMYK'])
 if upload:
     img = Image.open(upload)
-    gray_img = img.convert(radio)
+    gray_img = img.convert('L')
     download_img = to_bytes(gray_img)
     st.image(gray_img)
     st.download_button('Descargar imagen convertida', key='descargar_1',
@@ -27,7 +25,7 @@ with st.expander('Iniciar cámara'):
 
 if imagen:
     radio = st.radio('Tipo de conversión',
-                     options=['L', '1', 'RGB', 'CMYK'], key='no_radio')
+                     options=['L', '1'])
 
     img = Image.open(imagen)
     gray_img = img.convert(radio)
